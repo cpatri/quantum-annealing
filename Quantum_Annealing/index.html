@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+/* set the CSS */
+
+
+/* d3 */
+
+path {
+    stroke: black;
+    stroke-width: 2;
+    fill: none;
+}
+
+
+.axis path,
+
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.point {
+    fill: blue;
+    stroke: #000;
+}
+
+/* layout */
+
+#body {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    background: rgb(245, 245, 245);
+    font-family: 'Montserrat', sans-serif;
+    font-size: ;
+}
+
+
+#image1 {
+    width: 100%;
+    height: 100%;
+}
+
+#image2 {
+    width: 100%;
+}
+
+#header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: left margin:0;
+}
+
+.head-desc {
+    color: gray;
+    text-align: center;
+}
+
+#colL,
+#colR {
+    position: relative;
+    width: 45%;
+    padding: 1%;
+    display: inline-block;
+    text-align: center;
+}
+
+#anne {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+#sim {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+#body {
+    background: rgb(245, 245, 245);
+}
+
+
+#first {
+    position: absolute;
+    color: black;
+    font: bold 2.5vw'Montserrat', sans-serif;
+    letter-spacing: : -1px;
+    background: white;
+    padding: 10px;
+    top: 15%;
+}
+
+#second {
+    position: absolute;
+    color: black;
+    font: bold 1.75vw 'Montserrat', sans-serif;
+    letter-spacing: : -1px;
+    background: white;
+    padding: 10px;
+    top: 24.5%;
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</meta>
+
+<body>
+    <!-- header -->
+    <div id="header">
+        <div class="image">
+            <img id="image1" src="nebula.blue.jpg" alt="Space image">
+            <h1 id="first">Simulated vs. Quantum Annealing </h1>
+            <h1 id="second"> A Quick Guide</h1>
+        </div>
+    </div>
+    <div id="body">
+        <!-- left side -->
+        <div id="colL">
+            <h2> Simulated Annealing </h2>
+            <div id="sim"></div>
+            <p class="p-desc"><span style="font-weight: bold"> Black: </span> Energy landscape <span style="color: blue; font-weight: bold"> Blue: </span> Search History</p>
+            <br>
+            <br>
+            <h3> Description</h3>
+            <p class="p-desc">Simulated annealing (SA) is a metaheuristic used to approximate the global minimum of a given function. It mathematically mirrors the process of cooling a set of atoms to a state of minimum energy. The slow cooling is interpreted as a slow decrease in the probability of accepting worse solutions as the solution space is explored. SA is an improvement to the hill-climbing optimization algorithm, which may output the local minimum rather than the global minimum. SA avoids local minimums with its ability to occasionally choose random points. This is demonstrated in the visualization as the blue dots first start appearing all over the function represented as an energy landscape but slowly narrows its range overtime to find the minimum. SA is seen as an improvement of the hill-climbing optimization algorithm, which often gets stuck in a local min. While SA can be used to solve many optimization problems, one of its main criticisms today is that it is too slow.</p>
+            <h3> Applications</h3>
+            <p class="p-dec"> SA and its slight variations have a variety of applications in different fields. For instance, in the biological field, it is used in modeling neural networks and modeling protein chains. It has applications in geophysics to model seismic waveforms. SA has also been used on ecometric problems such as cost functions in financial institutions. In addition, it has been used by the US military to calculate the optimal distribution of resources.
+            </p>
+        </div>
+        <!-- right side -->
+        <div id="colR">
+            <h2> Quantum  Annealing </h2>
+            <div id="anne"></div>
+            <p class="p-desc"> <span style="font-weight: bold">Black:</span> Energy landscape <span style="color: blue; font-weight: bold">Blue: </span> Probability</p>
+            <br>
+            <h3> Description</h3>
+            <p class="p-desc">
+                Quantum annealing (QA) is the quantum interpretation of SA. Like SA, QA is a metaheuristic used to approximate the global minimum of a given function. Unlike SA, however, QA does not analyze each possible answer one by one (as shown with dots) but instead analyzes all possible solutions at the same time. At the start, all possible solutions have an equal probability of being the correct answer (visualized with a straight blue line). Then the probability of each possible solution being the optimal solution is calculated through a process called quantum tunneling. Analogous to the decrease in temperature in SA, the quantum tunneling field strength is weakened overtime to decrease the probability of accepting worse solutions. Finally, the field collapses into a ground state, providing the solution. Notably, researchers from technology companies such as Google provided evidence that QA has the potential of being exponentially faster than SA and be able to solve more different types of problems. </p>
+            <h3> Applications</h3>
+            <p class="p-desc"> Since quantum computing is still a very new field needing more research and development, there is not many real-life applications of QA yet. However, Lockheed Martin states that because quantum annealing has the potential to solve NP-hard problems in has future potential in a variety of fields such as defense, cyber security, healthcare, energy, and finance. QA also has great potential in machine learning. </p>
+        </div>
+        <img id="image2" src="nebula.blue.jpg" alt="Space image" />
+    </div>
+    <!-- load the d3.js library -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="annealing.js"></script>
+    <script src="simulated.js"></script>
+</body>
+
+</html>
